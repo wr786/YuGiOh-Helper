@@ -10,11 +10,14 @@
 	<script src="./js/jquery.min.js"></script>
 	<script src="./js/semantic.js"></script>
 	<script src="./js/vue.js"></script>
-    <script src="./js/iframe-content.js"></script>	
     
     <link rel='stylesheet' type="text/css" href='./css/general.css'>
     <script src="./js/general.js"></script>	
 </head>
 <body onresize="resizeBackground()">
+
+	<script>
+		resizeBackground();	// 刚开始就需要调用一次，因为要判断初始屏幕大小
+	</script>
 </body>
 </html>
