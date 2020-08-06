@@ -12,7 +12,8 @@
 	<script src="./js/vue.js"></script>
     
     <link rel='stylesheet' type="text/css" href='./css/general.css'>
-    <script src="./js/general.js"></script>	
+	<script src="./js/general.js"></script>	
+	<script src="./js/ygohelper.js"></script>	
 </head>
 <body leftmargin="0" topmargin="0" scroll="no" onresize="resizeBackground()">
 
@@ -30,50 +31,42 @@
 		<div class="six wide column">
 			<div class="row">
 				<div class="ui left action input">
-					<button class="ui red labeled icon button" style="width:10em;">
+					<button class="ui red labeled icon button" style="width:10em;" onclick="doDamage()">
 						<i class="hand point right icon"></i>
 						造成伤害
 					</button>
-					<input type="text" value="" placeholder="负数代表P1受到伤害" style="width:12em;">
+					<input type="text" value="" placeholder="负数代表P1受到伤害" style="width:12em;" id="dmg">
 				  </div>
 			</div>
 			<div class="row">
 				<div class="ui left action input">
-					<button class="ui green labeled icon button" style="width:10em;">
+					<button class="ui green labeled icon button" style="width:10em;" onclick="recoverLP()">
 						<i class="heart icon"></i>
 						重设LP
 					</button>
-					<input type="text" value="4000" style="width:12em;">
+					<input type="text" value="4000" style="width:12em;" id="lpMAX">
 				  </div>
 			</div>
 			<div class="row">
 				<div class="ui left action input">
-					<button class="ui grey labeled icon button" style="width:10em;">
+					<button class="ui grey labeled icon button" style="width:10em;" onclick="rollDice()">
 						<i class="cube icon"></i>
 						掷1d6
 					</button>
-					<div class="ui left pointing basic label" style="width:13em;" id="diceNotice">
+					<div class="ui hidden left pointing basic label" style="width:13em;" id="diceNotice">
 						<div class="ui text container">你掷出的是<span id="diceNum">6</span></div>
 					</div>
 				  </div>
 			</div>
 			<div class="row">
 				<div class="ui left action input">
-					<button class="ui orange labeled icon button" style="width:10em;">
+					<button class="ui orange labeled icon button" style="width:10em;" onclick="tollCoin()">
 						<i class="dollar sign icon"></i>
 						投硬币
 					</button>
-					<div class="ui left pointing basic label" style="width:13em;" id="coinNotice">
+					<div class="ui hidden left pointing basic label" style="width:13em;" id="coinNotice">
 						<div class="ui text container">你投出<span id="coinSide">正面</span></div>
 					</div>
-				  </div>
-			</div>
-			<div class="row">
-				<div class="ui left action input">
-					<button class="ui purple labeled icon button" style="width:10em;">
-						<i class="redo icon"></i>
-						撤销
-					</button>
 				  </div>
 			</div>
 		</div>
