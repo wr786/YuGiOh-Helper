@@ -14,10 +14,114 @@
     <link rel='stylesheet' type="text/css" href='./css/general.css'>
     <script src="./js/general.js"></script>	
 </head>
-<body onresize="resizeBackground()">
+<body leftmargin="0" topmargin="0" scroll="no" onresize="resizeBackground()">
+
+	<div class="ui inverted vertical masthead center aligned segment">
+		<h1 class="ui inverted header">
+		  <b>Yu-Gi-Oh! Helper</b>
+		  <div class="description" style="font-size: 0.5em;">A Yu-Gi-Oh! Offline Duel Toolbox by 
+			<a class="ui purple image label" href="http://wr786.top" target="_blank"><img src="./images/avatar/avatar.jpg">wr786</a>
+		  </div>
+		</h1>
+	</div>
+
+	<div class="ui two column stackable grid">
+		<!-- 左侧 -->
+		<div class="six wide column">
+			<div class="row">
+				<div class="ui left action input">
+					<button class="ui red labeled icon button" style="width:10em;">
+						<i class="hand point right icon"></i>
+						造成伤害
+					</button>
+					<input type="text" value="" placeholder="负数代表P1受到伤害" style="width:12em;">
+				  </div>
+			</div>
+			<div class="row">
+				<div class="ui left action input">
+					<button class="ui green labeled icon button" style="width:10em;">
+						<i class="heart icon"></i>
+						重设LP
+					</button>
+					<input type="text" value="4000" style="width:12em;">
+				  </div>
+			</div>
+			<div class="row">
+				<div class="ui left action input">
+					<button class="ui grey labeled icon button" style="width:10em;">
+						<i class="cube icon"></i>
+						掷1d6
+					</button>
+					<div class="ui left pointing basic label" style="width:13em;" id="diceNotice">
+						<div class="ui text container">你掷出的是<span id="diceNum">6</span></div>
+					</div>
+				  </div>
+			</div>
+			<div class="row">
+				<div class="ui left action input">
+					<button class="ui orange labeled icon button" style="width:10em;">
+						<i class="dollar sign icon"></i>
+						投硬币
+					</button>
+					<div class="ui left pointing basic label" style="width:13em;" id="coinNotice">
+						<div class="ui text container">你投出<span id="coinSide">正面</span></div>
+					</div>
+				  </div>
+			</div>
+			<div class="row">
+				<div class="ui left action input">
+					<button class="ui purple labeled icon button" style="width:10em;">
+						<i class="redo icon"></i>
+						撤销
+					</button>
+				  </div>
+			</div>
+		</div>
+		<!-- <div class="six wide column">
+			<div class="ui vertical labeled icon buttons">
+				<button class="ui red labeled icon button">
+					<i class="hand point right icon"></i>
+					造成伤害
+				</button>
+				<button class="ui green labeled icon button">
+					<i class="heart icon"></i>
+					重设LP
+				</button>
+				<button class="ui grey labeled icon button">
+					<i class="cube icon"></i>
+					投骰子(1d6)
+				</button>
+				<button class="ui orange labeled icon button">
+					<i class="dollar sign icon"></i>
+					投硬币
+				</button>
+				<button class="ui purple labeled icon button">
+					<i class="redo icon"></i>
+					撤销
+				</button>
+			</div>
+		</div> -->
+		<!-- 右侧 -->
+		<div class="ten wide column">
+			<div class="ui inverted segment" id="lpcounter">
+				<div class="ui inverted teal progress" id="player1">
+					<div class="bar"></div>
+					<div class="label">Player1:<span id="p1fz">4000</span>/<span id="p1fm">4000</span></div>
+				</div>
+				<div class="ui inverted teal progress" id="player2">
+					<div class="bar"></div>
+					<div class="label">Player2:<span id="p2fz">4000</span>/<span id="p2fm">4000</span></div>
+				</div>
+			</div>
+		</div>
+
+	</div>
 
 	<script>
+		// 初始化
 		resizeBackground();	// 刚开始就需要调用一次，因为要判断初始屏幕大小
+		$("#player1").progress({percent: 100});
+		$("#player2").progress({percent: 100});
 	</script>
 </body>
 </html>
